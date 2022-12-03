@@ -1,5 +1,5 @@
 // https://adventofcode.com/2022/day/1
-import {rawInput} from "./rawInput.mjs";
+import { rawInput } from "./rawInput.mjs";
 
 const solution1 = () => {
     const elfArr = [];
