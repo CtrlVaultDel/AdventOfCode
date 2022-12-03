@@ -1,12 +1,12 @@
 // https://adventofcode.com/2022/day/1
-import { rawInput } from "./rawInput.mjs";
+import { input } from "./input.mjs";
 
 const solution1 = () => {
     const elfArr = [];
     let elfIdx = 0;
     let totalCalories = 0;
 
-    rawInput
+    input
     .split("\n")
     .forEach(amount => {
         // When value is empty, start on next elf
