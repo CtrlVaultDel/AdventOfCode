@@ -1,12 +1,15 @@
 // https://adventofcode.com/2022/day/1
-import { rawInput } from "./rawInput.mjs";
+import { input } from "./input.mjs";
 
-const solution1 = () => {
+const solution = () => {
+    console.log("===================")
+	console.log("      (Day 1)      ")
+
     const elfArr = [];
     let elfIdx = 0;
     let totalCalories = 0;
 
-    rawInput
+    input
     .split("\n")
     .forEach(amount => {
         // When value is empty, start on next elf
@@ -27,6 +30,7 @@ const solution1 = () => {
     
     // Answer 2
     console.log(`Answer #2: ${elfArr[0] + elfArr[1] + elfArr[2]}`);
+    console.log("===================")
 }
 
-solution1();
+solution();
