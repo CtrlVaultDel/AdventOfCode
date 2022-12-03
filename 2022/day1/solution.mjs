@@ -1,10 +1,8 @@
 // https://adventofcode.com/2022/day/1
 import { input } from "./input.mjs";
+import { solutionLabel } from "../../Helpers/solutionLabel.mjs";
 
 const solution = () => {
-    console.log("===================")
-	console.log("      (Day 1)      ")
-
     const elfArr = [];
     let elfIdx = 0;
     let totalCalories = 0;
@@ -30,7 +28,6 @@ const solution = () => {
     
     // Answer 2
     console.log(`Answer #2: ${elfArr[0] + elfArr[1] + elfArr[2]}`);
-    console.log("===================")
 }
 
-solution();
+solutionLabel(solution, 1);

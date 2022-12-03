@@ -1,4 +1,5 @@
 // https://adventofcode.com/2022/day/2/input
+
 export const input = `C Z
 C Z
 A Y
