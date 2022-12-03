@@ -1,11 +1,9 @@
 // https://adventofcode.com/2022/day/2
 
 import { input } from "./input.mjs";
+import { solutionLabel } from "../../Helpers/solutionLabel.mjs";
 
 const solution = () => {
-	console.log("===================")
-	console.log("      (Day 2)      ")
-
 	// Store games as array
 	const gameArr = input.split("\n");
 
@@ -45,10 +43,10 @@ const solution = () => {
     }
 
 	// Reducer function (Answer 1)
-    const getTotalScore_1 = (totalScore, game) => totalScore += (getChoiceScore(game[2]) + getGameScore_1(game[0], game[2]))
+    const getTotalScore_1 = (totalScore, game) => totalScore += (getChoiceScore(game[2]) + getGameScore_1(game[0], game[2]));
 
 	// Answer 1
-    console.log(`Answer #1: ${gameArr.reduce((totalScore, game) => getTotalScore_1(totalScore, game), 0)}`)
+    console.log(`Answer #1: ${gameArr.reduce((totalScore, game) => getTotalScore_1(totalScore, game), 0)}`);
 
 	// ============================================
 	// ================= Answer 2 =================
@@ -85,10 +83,9 @@ const solution = () => {
  	}
 
 	// Reducer function (Answer 2)
-	const getTotalScore_2 = (totalScore, game) => totalScore += (getGameScore_2(game[0], game[2]))
+	const getTotalScore_2 = (totalScore, game) => totalScore += (getGameScore_2(game[0], game[2]));
 
-    console.log(`Answer #2: ${gameArr.reduce((totalScore, game) => getTotalScore_2(totalScore, game), 0)}`)
-	console.log("===================")
+    console.log(`Answer #2: ${gameArr.reduce((totalScore, game) => getTotalScore_2(totalScore, game), 0)}`);
 }
 
-solution();
+solutionLabel(solution, 2);

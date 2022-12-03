@@ -1,4 +1,5 @@
 // https://adventofcode.com/2022/day/1/input
+
 export const input = `5557
 6663
 3952
