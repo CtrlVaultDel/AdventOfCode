@@ -1,12 +1,8 @@
 // https://adventofcode.com/2022/day/1
-import rawInput from "./rawInput.mjs";
+import {rawInput} from "./rawInput.mjs";
 
 const solution1 = () => {
-
-    console.log(rawInput)
-    // Will hold array of each elf's total calories
     const elfArr = [];
-
     let elfIdx = 0;
     let totalCalories = 0;
 
@@ -27,10 +23,10 @@ const solution1 = () => {
     elfArr.sort((a, b) => b - a);
 
     // Answer 1
-    console.log(`Answer #1: ${elfArr[0]}`)
+    console.log(`Answer #1: ${elfArr[0]}`);
     
     // Answer 2
-    console.log(`Answer #2: ${elfArr[0] + elfArr[1] + elfArr[2]}`)
-};
+    console.log(`Answer #2: ${elfArr[0] + elfArr[1] + elfArr[2]}`);
+}
 
 solution1();
