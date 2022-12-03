@@ -1,5 +1,5 @@
-export const input = `
-5557
+// https://adventofcode.com/2022/day/1/input
+export const input = `5557
 6663
 3952
 4750
@@ -2235,4 +2235,4 @@ export const input = `
 1254
 3605
 4191
-1482`
+1482`;
