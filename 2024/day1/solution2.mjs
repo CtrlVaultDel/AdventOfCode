@@ -27,3 +27,5 @@ async function solution(){
 
 logAnswer(solution);
 getPerformance(solution);
+
+// Answer should be 23,046,913

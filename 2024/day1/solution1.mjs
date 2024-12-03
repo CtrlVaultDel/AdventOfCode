@@ -14,4 +14,4 @@ async function solution(){
 logAnswer(solution);
 getPerformance(solution);
 
-// Answer should be 1580061 for testing
+// Answer should be 1,580,061
