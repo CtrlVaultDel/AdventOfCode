@@ -4,36 +4,49 @@
 import { getInput, getPerformance, logAnswer } from "../../helpers/commonHelper.mjs";
 
 async function solution(){
-    const input = await getInput("2024/day2/input.txt");
-    const reports = input.map(report => report.split(" "));
-    return reports.reduce((acc, cur) => {
-        let initialDif = cur[0] - cur[1];
-        let isIncreasing = initialDif > 0 && initialDif <= 3;
-        let isDecreasing = initialDif < 0 && initialDif >= -3;
-        if (isIncreasing || isDecreasing){
-            if(cur.length > 2){
-                let isSafeReport = true;
-                for(let i = 1; i < cur.length - 1; i++){
-                    const dif = cur[i] - cur[i+1];
-                    if(isIncreasing && dif <= 0 || dif > 3){
-                        isSafeReport = false;
-                        break;
-                    }
-                    else if(isDecreasing && dif >= 0 || dif < -3){
-                        isSafeReport = false;
-                        break;
-                    }
+    const input = await getInput("2024/day2/input.txt").then(response => response.map(report => report.split(" ")));
+    return input.reduce((numSafeReports, report) => {
+        const initialDif = report[0] - report[1];
+
+        // Increasing trend and in bounds
+        if(validPositives[initialDif]){
+            for(let i = 1; i < report.length - 1; i++){
+                if(!validPositives[report[i] - report[i + 1]]){
+                    return numSafeReports; // Short-circuit
                 }
-                return isSafeReport ? acc + 1 : acc;
             }
-            else{
-                return acc + 1;
-            }
+            return numSafeReports + 1;
         }
+
+        // Decreasing trend and in bounds
+        else if(validNegatives[initialDif]){
+            for(let i = 1; i < report.length - 1; i++){
+                if(!validNegatives[report[i] - report[i + 1]]){
+                    return numSafeReports; // Short-circuit
+                }
+            }
+            return numSafeReports + 1;
+        }
+
+        // Flat trend or exceeded bounds
         else{
-            return acc;
+            return numSafeReports
         }
     }, 0)
+}
+
+const validPositives = {
+    '1': true,
+    '2': true,
+    '3': true,
+    _: false
+}
+
+const validNegatives = {
+    '-1': true,
+    '-2': true,
+    '-3': true,
+    _: false
 }
 
 logAnswer(solution);
