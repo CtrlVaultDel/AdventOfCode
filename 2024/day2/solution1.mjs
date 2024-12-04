@@ -49,6 +49,7 @@ const validNegatives = {
     _: false
 }
 
+
 logAnswer(solution);
 getPerformance(solution);
 
